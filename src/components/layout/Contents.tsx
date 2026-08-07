@@ -15,14 +15,19 @@ export function Contents() {
   }
   return (
     <main className="main-content">
-      <h2>메인 화면에 오신 것을 환영합니다!</h2>
-      <p>여기에 본문 내용을 작성하거나 다른 세부 컴포넌트들을 넣습니다.</p>
-      
+      <h2>React 19 기본 세팅 및 깃 호스팅</h2><br/>
+      <p>
+        최신 리액트 19 환경 구축해봄
+      </p>
+      <br/>
+      <h3>Typescript 적용 컴포넌트</h3><br/>
       <div>
-        <h2>카운트 : {count}</h2>
+        <h5>카운트 : {count}</h5><br/>
         <Button onClick={handleClick}>클릭!</Button>
-        <Button onClick={reset}>reset</Button>
+        <Button onClick={reset}>reset</Button><br/>React.ReactNode 버튼 컴포넌트
       </div>
+      <br/><br/>
+      <h3>유저 프로필 컴포넌트</h3>
       <UserProfile 
         name="김개발"
         age={43}
