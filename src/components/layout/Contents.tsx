@@ -36,7 +36,7 @@ export function Contents() {
         age={43}
         job="웹퍼블리셔"
         skills="react, vue, javascript, typescript, html, css, scss, git, api"
-        email="kmkyou1@gmail.com"
+        email="myoung_kyo@hanmail.net"
         notes="jsp, asp, php"/>
 
     </main>
