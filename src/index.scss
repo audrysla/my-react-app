@@ -163,4 +163,14 @@ h2{margin-top:30px;font-weight: bold;font-size:30px;}
   cursor:pointer;
   border:1px rgb(180, 180, 180) solid;
   & + .custom-button{margin-left:8px;}
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #e9e771;
+    border-color: #7e7c04;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
 }

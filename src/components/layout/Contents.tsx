@@ -18,16 +18,17 @@ export function Contents() {
       <h2>React 19 기본 세팅 및 깃 호스팅</h2><br/>
       <h3>최신 리액트 19 환경 구축</h3>
       <br/>
-      <h3>Typescript 적용 컴포넌트</h3><br/>
-      <p>React.ReactNode 버튼 컴포넌트</p>
+      <h3>Typescript 적용 컴포넌트</h3>      
+      <br/>      
+      <h5>카운트 : {count}</h5>
       <br/>
       <div>        
         <Button onClick={handleClick}>클릭!</Button>
-        <Button onClick={reset}>reset</Button>        
+        <Button onClick={reset}>reset</Button>
       </div>
       <br/>
-      <h5>카운트 : {count}</h5><br/>
-      <br/>
+      <p>React.ReactNode 버튼 컴포넌트</p>
+      <br/><br/>
       <h3>유저 프로필</h3>
       <p>(interface 프롭스)</p>
       <UserProfile 
