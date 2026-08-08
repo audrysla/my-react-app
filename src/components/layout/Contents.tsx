@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-// import { Routes, Route } from 'react-router';
 import { Button } from '../common/Button'
 import { UserProfile } from '../member/UserProfile'
-// import { About } from '../../pages/About'
 
 export function Contents() {
   const [status, setStatus] = useState('status');
@@ -26,7 +24,7 @@ export function Contents() {
   
 
   return (
-    <main className="main-content">
+    <>
         <h2>React 19 기본 세팅 및 깃 호스팅</h2><br/>
         <h3>최신 리액트 19 환경 구축</h3>
         <br/>
@@ -35,7 +33,7 @@ export function Contents() {
         <p>{status}</p>
         <h5>카운트 : {count}</h5>
         <br/>
-        <div>        
+        <div>
           <Button onClick={handleClick}>클릭!</Button>
           <Button onClick={reset}>reset</Button>
         </div>
@@ -52,6 +50,6 @@ export function Contents() {
           email="myoung_kyo@hanmail.net"
           notes="jsp, asp, php"/>
 
-    </main>
+    </>
   );
 }
