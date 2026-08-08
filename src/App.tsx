@@ -9,7 +9,7 @@ function App() {
   return (
     // <BrowserRouter>
       <div className="app-container">
-        <Header title="최신 React 19" />
+        <Header title="React 19" />
         <Contents />
         <Footer />
       </div>
