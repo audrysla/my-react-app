@@ -7,9 +7,9 @@ interface HeaderProps {
 export function Header({ title }: HeaderProps) {
   return (
     <header className="header">
-      <h1>{title}</h1>
+      <h1><Link to="/">{title}</Link></h1>
       <nav>
-        <Link to="/">홈</Link> | <Link to="/about">소개</Link>
+        <Link to="/about">소개</Link>
       </nav>
     </header>
   );
