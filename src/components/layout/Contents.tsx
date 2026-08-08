@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router';
+// import { Routes, Route } from 'react-router';
 import { Button } from '../common/Button'
 import { UserProfile } from '../member/UserProfile'
-import { About } from '../../pages/About'
+// import { About } from '../../pages/About'
 
 export function Contents() {
   const [status, setStatus] = useState('status');
