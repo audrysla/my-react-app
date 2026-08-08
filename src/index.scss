@@ -180,6 +180,9 @@ h2{margin-top:30px;font-weight: bold;font-size:30px;}
 }
 
 @media screen and (max-width: 768px) {
+  .app-container header a{
+    font-size: 18px;
+  }
   .custom-button{
     height:50px;
     font-size:24px;
