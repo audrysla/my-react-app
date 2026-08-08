@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.scss'
 import { Header } from './components/layout/Header'
 // import { Contents } from './components/layout/Contents'
@@ -9,7 +9,7 @@ import About from './pages/About';
 function App() {
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <div className="app-container">
         <Header title="React 19" />        
         <main className="main-content">
@@ -20,7 +20,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
