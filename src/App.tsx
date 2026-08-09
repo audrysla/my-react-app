@@ -20,17 +20,17 @@ function App() {
       <div className="app-container">
         <Header title="React 19" />
         <main className="main-content">
-        <Routes>                    
-          <Route path="/" element={<HomeLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/ExHover" element={<ExHover />} />
-            <Route path="/ExUseState" element={<ExUseState />} />
-            <Route path="/ExUseEffect" element={<ExUseEffect />} />
-            <Route path="/ExUseRef" element={<ExUseRef />} />
-            <Route path="/ExContext" element={<ExContext />} />
-          </Route>
+          <Routes>
+            <Route path="/" element={<HomeLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/ExHover" element={<ExHover />} />
+              <Route path="/ExUseState" element={<ExUseState />} />
+              <Route path="/ExUseEffect" element={<ExUseEffect />} />
+              <Route path="/ExUseRef" element={<ExUseRef />} />
+              <Route path="/ExContext" element={<ExContext />} />
+            </Route>
+          </Routes>
           <Route path="/about" element={<About />} />
-        </Routes>
         </main>
         <Footer />
       </div>
