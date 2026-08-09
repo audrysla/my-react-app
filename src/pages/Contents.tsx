@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Button } from '../common/Button'
-import { UserProfile } from '../member/UserProfile'
+import { Button } from '../components/common/Button'
+import { UserProfile } from '../components/member/UserProfile'
 
 export function Contents() {
   const [status, setStatus] = useState('status');

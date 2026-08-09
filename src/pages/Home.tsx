@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-        <h2>React 19 기본 세팅 및 깃 호스팅</h2><br/>
+        <h2>React 19 기본 세팅 및 깃 호스팅</h2>
         <h3>최신 리액트 19 환경 구축</h3>
         <br/>
         <h3>Typescript 적용 컴포넌트</h3>      
