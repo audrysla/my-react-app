@@ -117,7 +117,7 @@ h2{font-weight: bold;font-size:30px;}
   display: flex;
   flex-direction: column;
   /* 안전한 모바일 대응 높이 설정 */
-  min-height: 100vh;
+  // min-height: 100vh;
   min-height: 100dvh;
   header{
     padding:20px;
