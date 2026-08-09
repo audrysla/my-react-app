@@ -37,7 +37,7 @@ export default function Home() {
         <h3>Typescript 적용 컴포넌트</h3>      
         <br/>
         <p>{status}</p>
-        <h5>카운트 : <em ref={countNumRef} className='countNum'>{count}</em></h5>
+        <h5>카운트 : {count}<em ref={countNumRef} className='countNum'>{count}</em></h5>
         <br/>
         <div>        
           <Button onClick={handleClick}>클릭!</Button>
