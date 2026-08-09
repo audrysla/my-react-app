@@ -218,7 +218,20 @@ h2{font-weight: bold;font-size:30px;}
     border-radius: 16px;
   }
 }
-
+.countNum{
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  font-style: normal;
+  pointer-events: none;
+  animation: popAndFade 0.5s ease-out;
+}
+@keyframes popAndFade {
+  100%{
+    opacity: 0;
+    transform: scale(40);
+  }
+}
 .subpage-content{
   padding-top:30px;
   img{
