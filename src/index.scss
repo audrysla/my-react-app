@@ -218,30 +218,30 @@ h2{font-weight: bold;font-size:30px;}
     border-radius: 16px;
   }
 }
-
-  .countNum{
+body{touch-action: none;}
+.countNum{
+  opacity: 0;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  font-style: normal;
+  pointer-events: none;
+}
+.countNum.animate{
+  animation: popAndFade 0.5s ease-out;
+}
+@keyframes popAndFade {
+  0%{
+    opacity: 1;
+  }
+  100%{
     opacity: 0;
-    z-index: 10;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-block;
-    font-style: normal;
-    pointer-events: none;
+    font-size:600px;
   }
-  .countNum.animate{
-    animation: popAndFade 0.5s ease-out;
-  }
-  @keyframes popAndFade {
-    0%{
-      opacity: 1;
-    }
-    100%{
-      opacity: 0;
-      font-size:600px;
-    }
-  }
+}
 
 .subpage-content{
   padding-top:30px;
