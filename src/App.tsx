@@ -21,6 +21,7 @@ function App() {
         <Header title="React 19" />
         <main className="main-content">
           <Routes>
+            {/* 서브 메뉴가 있는 레이아웃 */}
             <Route path="/" element={<HomeLayout />}>
               <Route path="/" element={<Home />} />
               <Route path="/ExHover" element={<ExHover />} />
@@ -29,8 +30,9 @@ function App() {
               <Route path="/ExUseRef" element={<ExUseRef />} />
               <Route path="/ExContext" element={<ExContext />} />
             </Route>
+            {/* 단독 페이지 */}
+            <Route path="/about" element={<About />} />
           </Routes>
-          <Route path="/about" element={<About />} />
         </main>
         <Footer />
       </div>
