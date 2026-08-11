@@ -171,41 +171,32 @@ h2{font-weight: bold;font-size:30px;}
   border-bottom: 1px solid #eee;
   padding:10px 0;
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 32px;
-    padding: 0 24px;
-    &::after{
-      content:'';
-      display: block;
-      height:1px;
-      padding-right:1px;
-    }
-  }
-
-  nav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    border:1px solid #ccc;
-    height:30px;
     display: inline-flex;
     align-items: center;
-    padding:0 10px;
-    border-radius:6px;
-  }
-
-  nav a:hover {
-    color: #a539ff;
-    border-color:inherit
-  }
-
-  nav a.active {
-    color: #a539ff;
-    border-color:inherit;
-    font-weight: 700;
+    justify-content: space-around;
+    padding: 0 16px;
+    gap:30px;
+    a {
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      border:1px solid #ccc;
+      height:30px;
+      display: inline-flex;
+      align-items: center;
+      padding:0 10px;
+      border-radius:6px;      
+      &:hover {
+        color: #a539ff;
+        border-color:inherit
+      }
+      &.active {
+        color: #a539ff;
+        border-color:inherit;
+        font-weight: 700;
+      }
+    }
   }
 }
 
