@@ -9,6 +9,7 @@ export default function Header({ title }: HeaderProps) {
     <header className="header">
       <h1><Link to="/">{title}</Link></h1>
       <nav>
+        <Link to="/Comment">게시판</Link>
         <Link to="/about">소개</Link>
       </nav>
     </header>

@@ -12,6 +12,7 @@ import ExUseState from './pages/sub/ExUseState';
 import ExUseEffect from './pages/sub/ExUseEffect';
 import ExUseRef from './pages/sub/ExUseRef';
 import ExContext from './pages/sub/ExContext';
+import Comment from './pages/Comment';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             </Route>
             {/* 단독 페이지 */}
             <Route path="/about" element={<About />} />
+            <Route path="/Comment" element={<Comment />} />
           </Routes>
         </main>
         <Footer />

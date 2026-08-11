@@ -142,7 +142,7 @@ h2{font-weight: bold;font-size:30px;}
 
 .sidebar{
   overflow-x: auto;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   nav {
     display: flex;
     align-items: center;
@@ -157,14 +157,22 @@ h2{font-weight: bold;font-size:30px;}
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
+    border:1px solid #ccc;
+    height:30px;
+    display: inline-flex;
+    align-items: center;
+    padding:0 10px;
+    border-radius:6px;
   }
 
   nav a:hover {
-    color: #007bff;
+    color: #a539ff;
+    border-color:inherit
   }
 
   nav a.active {
-    color: #007bff;
+    color: #a539ff;
+    border-color:inherit;
     font-weight: 700;
   }
 }
