@@ -129,6 +129,32 @@ h2{font-weight: bold;font-size:30px;}
     gap:20px;
     h1{padding:0px;margin:0;font-size:26px;color: inherit;font-weight: bold;}
     a{color: inherit;}
+    nav{
+      display: flex;
+      gap:15px;
+      a{
+
+      }
+    }
+  }
+  .commentWrap{
+    display: none;
+    padding-top: 30px;
+    max-width: 450px;
+    margin:0 auto;
+    input[type='text']{
+      height:30px;
+      bordeR:1px solid #999;
+      text-indent: 8px;
+    }
+    button{
+      vertical-align: top; 
+      border-radius:6px;
+      font-size:14px;
+      display: inline-block;
+      padding:0 10px;
+      height:30px;
+    }
   }
   main{
     flex:1;

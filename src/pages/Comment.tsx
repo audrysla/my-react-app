@@ -84,7 +84,8 @@ export default function CommentSection({
   );
 
   return (
-    <div style={{ maxWidth: "400px", padding: "20px" }}>
+    <div className="commentWrap">
+      <h2>방명록</h2>
       <h3>댓글 목록</h3>
 
       <ul>
