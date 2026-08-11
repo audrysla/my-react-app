@@ -143,6 +143,16 @@ h2{font-weight: bold;font-size:30px;}
 .sidebar{
   overflow-x: auto;
   border-bottom: 1px solid #eee;
+  /* 1. 크롬, 사파리, 모바일 브라우저 (WebKit 엔진) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. 파이어폭스 (Firefox) */
+  scrollbar-width: none;
+
+  /* 3. 구형 인터넷 익스플로러 및 에지 (IE / Edge) */
+  -ms-overflow-style: none;
   nav {
     display: flex;
     align-items: center;
@@ -182,6 +192,27 @@ h2{font-weight: bold;font-size:30px;}
     font-weight: 700;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar nav{
+    height:75px;
+    a{
+      height:35px;
+      padding:0 15px;
+    }
+  }
+
+  .app-container nav a{
+    font-size: 18px;
+  }
+  .custom-button{
+    height:50px;
+    font-size:24px;
+    padding:0 30px;
+    border-radius: 16px;
+  }
+}
+
 .user-card{
   margin:20px auto;
   width:360px;
@@ -221,17 +252,7 @@ h2{font-weight: bold;font-size:30px;}
   }
 }
 
-@media screen and (max-width: 768px) {
-  .app-container nav a{
-    font-size: 18px;
-  }
-  .custom-button{
-    height:50px;
-    font-size:24px;
-    padding:0 30px;
-    border-radius: 16px;
-  }
-}
+
 body{touch-action: none;}
 .countNum{
   opacity: 0;
