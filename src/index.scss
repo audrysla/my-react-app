@@ -150,6 +150,12 @@ h2{font-weight: bold;font-size:30px;}
     gap: 32px;
     height: 56px;
     padding: 0 24px;
+    &::after{
+      content:'';
+      display: block;
+      height:1px;
+      padding-right:1px;
+    }
   }
 
   nav a {
