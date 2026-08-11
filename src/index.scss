@@ -143,16 +143,7 @@ h2{font-weight: bold;font-size:30px;}
 .sidebar{
   overflow-x: auto;
   border-bottom: 1px solid #eee;
-  /* 1. 크롬, 사파리, 모바일 브라우저 (WebKit 엔진) */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* 2. 파이어폭스 (Firefox) */
-  scrollbar-width: none;
-
-  /* 3. 구형 인터넷 익스플로러 및 에지 (IE / Edge) */
-  -ms-overflow-style: none;
+  
   nav {
     display: flex;
     align-items: center;
@@ -194,11 +185,23 @@ h2{font-weight: bold;font-size:30px;}
 }
 
 @media screen and (max-width: 768px) {
-  .sidebar nav{
-    height:75px;
-    a{
-      height:35px;
-      padding:0 15px;
+  .sidebar{
+    /* 1. 크롬, 사파리, 모바일 브라우저 (WebKit 엔진) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 2. 파이어폭스 (Firefox) */
+    scrollbar-width: none;
+
+    /* 3. 구형 인터넷 익스플로러 및 에지 (IE / Edge) */
+    -ms-overflow-style: none;
+    nav{
+      height:75px;
+      a{
+        height:35px;
+        padding:0 15px;
+      }
     }
   }
 
