@@ -1,9 +1,9 @@
 import temp1 from '../../assets/images/temp.png'
 
-export default function ExUseState() {
+export default function Sub01() {
   return (
     <>
-      <h2>useState 페이지</h2>
+      <h2>useContext 페이지</h2>
       <img src={temp1} alt='공사중' />
     </>
   );

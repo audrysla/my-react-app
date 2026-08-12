@@ -8,12 +8,12 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { path: "/", label: "click" },
-  { path: "/ExHover", label: "hover" },
-  { path: "/ExUseState", label: "useState" },
-  { path: "/ExUseEffect", label: "useEffect" },
-  { path: "/ExUseRef", label: "useRef" },
-  { path: "/ExContext", label: "Context" },
+  { path: "/", label: "useState" },
+  { path: "/Sub02", label: "hover" },
+  { path: "/Sub03", label: "useEffect" },
+  { path: "/Sub04", label: "useRef" },
+  { path: "/Sub05", label: "useState" },
+  { path: "/Sub01", label: "useContext" },
 ];
 
 const HomeLayout = () => {

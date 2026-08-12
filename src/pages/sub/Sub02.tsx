@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ExHover() {
+export default function Sub02() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
