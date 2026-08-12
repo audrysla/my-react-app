@@ -34,9 +34,9 @@ export default function Home() {
         <h2>React 19 기본 세팅 및 깃 호스팅</h2>
         <h3>최신 리액트 19 환경 구축</h3>
         <br/>
-        <h3>Typescript 적용 컴포넌트</h3>      
+        <h3>Typescript 적용 컴포넌트</h3>
         <br/>
-        <p>{status}</p>
+        <p>useState 의존성 배열<br/>{status}</p><br/>
         <h5>카운트 : {count}<em ref={countNumRef} className='countNum'>{count}</em></h5>
         <br/>
         <div>        
