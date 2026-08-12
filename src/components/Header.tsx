@@ -10,7 +10,7 @@ export default function Header({ title }: HeaderProps) {
       <h1><Link to="/">{title}</Link></h1>
       <nav>
         {/* <Link to="/Comment">방명록</Link> */}
-        <Link to="/about">소개</Link>
+        <Link to="/about" title="소개">🐮🐶</Link>
       </nav>
     </header>
   );
