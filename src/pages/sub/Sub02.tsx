@@ -28,11 +28,11 @@ export default function Timer() {
   }, [isRunning]); // isRunning 값이 변경될 때만 실행
 
   const formatTime = (totalCentiseconds: number) => {
-    const minutes = Math.floor(totalCentiseconds / 6000); // 1분 = 6000 (10ms)
+    // const minutes = Math.floor(totalCentiseconds / 6000); // 1분 = 6000 (10ms)
     const seconds = Math.floor((totalCentiseconds % 6000) / 100); // 1초 = 100 (10ms)
     const centiseconds = totalCentiseconds % 100; // 남은 1/100초
 
-    const mm = String(minutes).padStart(2, '0');
+    // const mm = String(minutes).padStart(2, '0');
     const ss = String(seconds).padStart(2, '0');
     const cs = String(centiseconds).padStart(2, '0');
 
