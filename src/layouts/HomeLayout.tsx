@@ -9,7 +9,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { path: "/", label: "useState" },
-  { path: "/Sub02", label: "hover" },
+  { path: "/Sub02", label: "Timer" },
   { path: "/Sub03", label: "useEffect" },
   { path: "/Sub04", label: "useRef" },
   { path: "/Sub05", label: "useState" },
