@@ -39,9 +39,13 @@ export default function Home() {
         <p>useState 의존성 배열<br/>{status}</p><br/>
         <h5>카운트 : {count}<em ref={countNumRef} className='countNum'>{count}</em></h5>
         <br/>
-        <div>        
-          <Button onClick={handleClick}>클릭!</Button>
-          <Button onClick={reset}>reset</Button>
+        <div className='btns'>
+          <button onClick={handleClick}>
+            클릭!
+          </button>
+          <button className='style2' onClick={reset}>
+            Reset
+          </button>
         </div>
         <br/>
         <p>React.ReactNode 버튼 컴포넌트</p>        

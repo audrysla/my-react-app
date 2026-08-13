@@ -56,8 +56,8 @@ export default function Sub03() {
           let +1
         </button>
         <button className='style2' onClick={handleReset}>
-            Reset
-          </button>
+          Reset
+        </button>
       </div>
     </>
   );
