@@ -60,7 +60,7 @@ export default function Timer() {
           <button onClick={handleStop} disabled={!isRunning}>
             Stop!
           </button>
-          <button onClick={handleReset}>
+          <button className='style2' onClick={handleReset}>
             Reset
           </button>
         </div>
