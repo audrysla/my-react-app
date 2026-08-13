@@ -306,12 +306,16 @@ body{touch-action: none;}
   margin:0 auto;
   width:250px;
   p{
-    i{
+    span{
       font-family: 'Courier New', Courier, monospace;
-      font-style: normal;
       color:#a539ff;
-      font-size:80px;
+      font-size:50px;
       font-weight: bold;
+      i{
+        font-style: normal;        
+        font-size:80px;
+        
+      }
     }
   }
   .btns {
@@ -324,7 +328,7 @@ body{touch-action: none;}
     padding: 0 16px;
     border-radius: 6px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     height: 36px;
     cursor: pointer;
     position: relative;
@@ -332,7 +336,7 @@ body{touch-action: none;}
     transition: all 0.1s ease;
 
     /* 1. 입체 물리 버튼 느낌 (아래쪽 두꺼운 입체 그림자) */
-    background-color: #222;
+    background-color: #333;
     color: #fff;
     box-shadow: 0 4px 0 #999, 0 5px 8px rgba(0, 0, 0, 0.2);
 
@@ -373,9 +377,10 @@ body{touch-action: none;}
     /* 4. 비활성화(disabled)되었을 때 푹 꺼진 비활성 효과 */
     &:disabled {
       opacity: 0.5;
-      cursor: not-allowed;
+      cursor: default;
       transform: translateY(3px);
       box-shadow: 0 1px 0 #888888;
+      background-color: #999;      
     }
   }
 }

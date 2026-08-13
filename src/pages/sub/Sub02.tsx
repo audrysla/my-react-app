@@ -1,17 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 
 export default function Timer() {
-  const [seconds, setSeconds] = useState<number>(0);
+  const [time, setTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
-
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (isRunning) {
       // 1초마다 seconds 상태를 1씩 증가
       timerIdRef.current = setInterval(() => {
-        setSeconds((prev) => prev + 1);
-      }, 1000);
+        setTime((prev) => prev + 1);
+      }, 10);
     } else {
       // 정지 상태이면 타이머 해제
       if (timerIdRef.current) {
@@ -28,29 +27,41 @@ export default function Timer() {
     };
   }, [isRunning]); // isRunning 값이 변경될 때만 실행
 
+  const formatTime = (totalCentiseconds: number) => {
+    const minutes = Math.floor(totalCentiseconds / 6000); // 1분 = 6000 (10ms)
+    const seconds = Math.floor((totalCentiseconds % 6000) / 100); // 1초 = 100 (10ms)
+    const centiseconds = totalCentiseconds % 100; // 남은 1/100초
+
+    const mm = String(minutes).padStart(2, '0');
+    const ss = String(seconds).padStart(2, '0');
+    const cs = String(centiseconds).padStart(2, '0');
+
+    return (<span><i>{ss}</i>.{cs}</span>);
+  };
+
   // 핸들러 함수들
   const handleStart = () => setIsRunning(true);
   const handleStop = () => setIsRunning(false);
   const handleReset = () => {
     setIsRunning(false);
-    setSeconds(0);
+    setTime(0);
   };
   
   return (
     <div>
-      <h2>Timer 페이지</h2>
-
+      <h2>Timer</h2>
+      <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
       <div className='timerWrap'>
-        <p><i>{seconds}</i>초</p>
+        <p>{formatTime(time)}초</p>
         <div className='btns'>
           <button onClick={handleStart} disabled={isRunning}>
-            시작
+            Start
           </button>
           <button onClick={handleStop} disabled={!isRunning}>
-            정지
+            Stop!
           </button>
           <button onClick={handleReset}>
-            초기화
+            Reset
           </button>
         </div>
       </div>
