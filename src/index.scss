@@ -340,6 +340,9 @@ body{touch-action: none;}
     color: #fff;
     box-shadow: 0 4px 0 #999, 0 5px 8px rgba(0, 0, 0, 0.2);
 
+    &:last-child{
+      background-color: #e0e358;
+    }
     /* 2. 버튼 클릭할 때 실제로 푹 눌리는 아날로그 키감 효과 */
     &:active:not(:disabled) {
       transform: translateY(3px); /* 버튼이 3px 아래로 내려감 */
