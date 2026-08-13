@@ -65,7 +65,7 @@ export default function Sub03() {
       </div>
 
       <div style={{marginTop : '50px'}}>
-        console.log(일반 변수 = {localVar}")
+        console.log(일반 변수 = {localVar})
       </div>
     </>
   );
