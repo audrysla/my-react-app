@@ -385,3 +385,10 @@ body{touch-action: none;}
   }
 }
 }
+
+.no-select {
+  -webkit-user-select: none; /* Safari, Chrome 등 구형 브라우저 지원 */
+  -moz-user-select: none;    /* Firefox 지원 */
+  -ms-user-select: none;     /* IE / Edge 구버전 지원 */
+  user-select: none;         /* 표준 속성 (텍스트 드래그 방지) */
+}

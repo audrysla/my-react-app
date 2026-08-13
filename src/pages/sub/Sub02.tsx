@@ -48,7 +48,7 @@ export default function Timer() {
   };
   
   return (
-    <div>
+    <div className='no-select'>
       <h2>Timer</h2>
       <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
       <div className='timerWrap'>
