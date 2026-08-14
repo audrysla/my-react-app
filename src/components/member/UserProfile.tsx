@@ -12,9 +12,9 @@ export function UserProfile({
   name,
   age,
   job,
-  skills,
   email,
   tel,
+  skills,
   notes,
 }: UserProfileProps) {
   return (
