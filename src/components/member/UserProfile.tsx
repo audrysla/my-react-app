@@ -4,7 +4,7 @@ interface UserProfileProps {
   job: string;
   skills: string;
   email: string;
-  tel: string;
+  tel?: string;
   notes?: string;
 }
 
