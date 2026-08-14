@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 export default function Timer() {
   const [time, setTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const triggerConfetti = () => {
@@ -78,6 +79,7 @@ export default function Timer() {
 
     if (stoppedTime > 0 && centiseconds === 0) {
       console.log(`성공! ${seconds}초 정각!`);
+      setIsSuccess(true) // 성공시 세팅
       triggerConfetti(); // 폭죽 터뜨리기!
     } else {
       console.log(`실패! 현재 초: ${seconds}.${centiseconds}`);
@@ -88,6 +90,8 @@ export default function Timer() {
     setTime(0);
   };
   
+  const handleSuccess = () => triggerConfetti();
+
   return (
     <div className='no-select'>
       <h2>Timer</h2>      
@@ -105,6 +109,11 @@ export default function Timer() {
           <button className='style2' onClick={handleReset}>
             Reset
           </button>
+          {isSuccess && (
+            <button className='style3' onClick={handleSuccess}>
+              🎇
+            </button>
+          )}     
         </div>
       </div>
       <br/><br/>
