@@ -4,8 +4,9 @@ interface UserProfileProps {
   job: string;
   skills: string;
   email: string;
-  tel?: string;
-  notes: string;
+  tel: string;
+  notes?: string;
+  hobby?: string;
 }
 
 export function UserProfile({
@@ -15,7 +16,8 @@ export function UserProfile({
   skills,
   email,
   tel,
-  notes
+  notes,
+  hobby
 }: UserProfileProps) {
   return (
     <div className="user-card">
@@ -25,7 +27,8 @@ export function UserProfile({
       <p><em>e-mail</em> {email}</p>
       <p><em>Tel.</em> {tel}</p>
       <p><em>스킬</em> {skills}</p>
-      <p><em>기타</em> {notes}</p>      
+      <p><em>기타</em> {notes}</p>
+      {/* <p><em>취미</em> {hobby}</p> */}
     </div>
   );
 }
