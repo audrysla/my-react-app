@@ -1,11 +1,37 @@
 import { useState, useRef, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 
 export default function Timer() {
   const [time, setTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useEffect(() => {
+  const triggerConfetti = () => {
+    // 중앙에서
+    confetti({
+      particleCount: 80,
+      spread: 100,
+      shapes: ['star', 'circle'], // 'square'(기본), 'circle', 'star' 가능
+      colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
+    });
+    // 왼쪽 구석에서
+    confetti({
+      particleCount: 30,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x: Math.random() * 0.3, y: Math.random() - 0.2 },
+    });
+    // 오른쪽 구석에서
+    confetti({
+      particleCount: 30,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x: Math.random() * 0.7 + 0.3, y: Math.random() - 0.2 },
+    });
+  }
+
+  useEffect(() => {    
+    
     if (isRunning) {
       // 1초마다 seconds 상태를 1씩 증가
       timerIdRef.current = setInterval(() => {
@@ -41,7 +67,22 @@ export default function Timer() {
 
   // 핸들러 함수들
   const handleStart = () => setIsRunning(true);
-  const handleStop = () => setIsRunning(false);
+  const handleStop = () => {
+    setIsRunning(false);
+
+    const stoppedTime = time;
+
+    // 100분의 1초 값 추출
+    const centiseconds = stoppedTime % 100;
+    const seconds = Math.floor((stoppedTime % 6000) / 100);
+
+    if (stoppedTime > 0 && centiseconds === 0) {
+      console.log(`성공! ${seconds}초 정각!`);
+      triggerConfetti(); // 폭죽 터뜨리기!
+    } else {
+      console.log(`실패! 현재 초: ${seconds}.${centiseconds}`);
+    }
+  }
   const handleReset = () => {
     setIsRunning(false);
     setTime(0);
@@ -49,8 +90,9 @@ export default function Timer() {
   
   return (
     <div className='no-select'>
-      <h2>Timer</h2>
-      <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
+      <h2>Timer</h2>      
+      <h3>초 정각(00)을 맞춰보세요!</h3><br/>
+      <p>1.00초 2.00초 3.00초...</p><br/>
       <div className='timerWrap'>
         <p>{formatTime(time)}초</p>
         <div className='btns'>
@@ -65,6 +107,8 @@ export default function Timer() {
           </button>
         </div>
       </div>
+      <br/><br/>
+      <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
     </div>
   );
 }
