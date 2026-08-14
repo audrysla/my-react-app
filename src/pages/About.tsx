@@ -13,7 +13,7 @@ export default function About() {
           skills="react, vue, javascript, typescript, html, css, scss, git, api"
           email="myoung_kyo@hanmail.net"
           tel="010-2653-3076"
-          notes="jsp, asp, php, 운동, 홈트, 축구, 카메라, 자전거, 피아노, 음악감상, 산책"
+          notes="jsp, asp, php, 운동, 홈트, 축구, 카메라, 자전거, 피아노, 음악감상, 산책, 미혼, 자녀 없음"
         />
       </section>
     </>
