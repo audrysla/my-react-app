@@ -4,22 +4,25 @@ import { useState, useRef, useEffect } from 'react';
 export default function Sub03() {
   // useState: 값이 바뀌면 리렌더링을 유발함 & 데이터 유지됨
   const [stateCount, setStateCount] = useState(0);
-  const [localVar, setLocalVar] = useState(0);
-
+  
   // useRef: 값이 바뀌어도 리렌더링을 유발하지 않음 & 데이터 유지됨
   const refCount = useRef(0);
-  const renderCounter = useRef(1);
+  // const renderCounter = useRef(1);
+  const refLocalVal = useRef<HTMLSpanElement>(null);
   
-  let localVariable = 0;  // 일반 변수: 렌더링될 때마다 재선언되면서 0으로 초기화됨
+  let localVariable = 3;  // 일반 변수: 렌더링될 때마다 재선언되면서 0으로 초기화됨
 
   // 렌더링 카운터 증가 (Effect 안에서 올려야 무한 루프에 안 빠짐)
   useEffect(() => {
-    renderCounter.current += 1;
-  });
+    // renderCounter.current += 1;
+    
+  }, []);
 
   const StateUp = () => {
     setStateCount(prev => prev + 1); // State 변경 -> 리렌더링 발생!
-    setLocalVar(0)
+    if (refLocalVal.current) {
+      refLocalVal.current.innerText = `${localVariable}`
+    }
   };
 
   const RefUp = () => {
@@ -28,14 +31,17 @@ export default function Sub03() {
 
   const LetUp = () => {
     localVariable += 1; // 일반 변수 값 올려봄
-    setLocalVar(prev => prev + 1)
-    // console.log(localVariable)
+    if (refLocalVal.current) {
+      refLocalVal.current.innerText = `${localVariable}`
+    }
   };
 
   const handleReset = () => {
     setStateCount(0);
     refCount.current = 0;
-    setLocalVar(0)
+    if (refLocalVal.current) {
+      refLocalVal.current.innerText = '0'
+    }
   };
 
   return (
@@ -65,7 +71,7 @@ export default function Sub03() {
       </div>
 
       <div style={{marginTop : '50px'}}>
-        console.log(일반 변수 = {localVar})
+        console.log(<b>lef</b> 일반 변수 : <span ref={refLocalVal}></span>)
       </div>
     </>
   );
