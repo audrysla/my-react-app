@@ -54,7 +54,7 @@ export default function Sub03() {
         <p><strong>useState</strong> (stateCount) : <b>{stateCount}</b></p>
         <p><strong>useRef</strong> (refCount.current) : <b>{refCount.current}</b></p>
         <p><strong>let</strong> (일반 변수) : <b>{localVariable}</b></p>
-        <p><strong>let</strong> (일반 변수) console.log(<span style={{fontWeight:'bold'}}ref={refLocalVal}></span>)</p>
+        <p>console.log (일반 변수 : <span style={{fontWeight:'bold'}}ref={refLocalVal}></span>)</p>
       </div>
 
       <div className='btns'>
