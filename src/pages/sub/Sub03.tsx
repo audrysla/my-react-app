@@ -10,7 +10,8 @@ export default function Sub03() {
   // const renderCounter = useRef(1);
   const refLocalVal = useRef<HTMLSpanElement>(null);
   
-  let localVariable = 3;  // 일반 변수: 렌더링될 때마다 재선언되면서 0으로 초기화됨
+  const num = 3;  // 콘솔로그와 동일하게 보여주기위해 임의 사용
+  let localVariable = num;  // 일반 변수: 렌더링될 때마다 재선언되면서 0으로 초기화됨
 
   // 렌더링 카운터 증가 (Effect 안에서 올려야 무한 루프에 안 빠짐)
   useEffect(() => {
@@ -19,10 +20,10 @@ export default function Sub03() {
   }, []);
 
   const StateUp = () => {
-    setStateCount(prev => prev + 1); // State 변경 -> 리렌더링 발생!
     if (refLocalVal.current) {
-      refLocalVal.current.innerText = `${localVariable}`
+      refLocalVal.current.innerText = `${num}`
     }
+    setStateCount(prev => prev + 1); // State 변경 -> 리렌더링 발생!
   };
 
   const RefUp = () => {
@@ -40,7 +41,7 @@ export default function Sub03() {
     setStateCount(0);
     refCount.current = 0;
     if (refLocalVal.current) {
-      refLocalVal.current.innerText = '0'
+      refLocalVal.current.innerText = `${num}`
     }
   };
 
