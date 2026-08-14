@@ -6,7 +6,6 @@ interface UserProfileProps {
   email: string;
   tel: string;
   notes?: string;
-  hobby?: string;
 }
 
 export function UserProfile({
@@ -16,7 +15,7 @@ export function UserProfile({
   skills,
   email,
   tel,
-  notes,
+  notes
 }: UserProfileProps) {
   return (
     <div className="user-card">
@@ -27,7 +26,6 @@ export function UserProfile({
       <p><em>Tel.</em> {tel}</p>
       <p><em>스킬</em> {skills}</p>
       <p><em>기타</em> {notes}</p>
-      {/* <p><em>취미</em> {hobby}</p> */}
     </div>
   );
 }
