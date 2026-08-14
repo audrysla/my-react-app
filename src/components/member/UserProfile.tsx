@@ -15,7 +15,7 @@ export function UserProfile({
   skills,
   email,
   tel,
-  notes
+  notes,
 }: UserProfileProps) {
   return (
     <div className="user-card">
