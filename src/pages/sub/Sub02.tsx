@@ -12,6 +12,7 @@ export default function Timer() {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [isGiveup, setIsGiveup] = useState<boolean>(false);
+  const [isFinish, setIsFinish] = useState<boolean>(false);
 
   const triggerConfetti = () => {
     // 중앙에서
@@ -91,38 +92,43 @@ export default function Timer() {
     const seconds = Math.floor((stoppedTime % 6000) / 100);
 
     if (stoppedTime > 0 && centiseconds === 0) {
-      console.log(`성공! ${seconds}초 정각!`);
-      setIsSuccess(true) // 성공시 세팅
+      console.log(`성공! ${seconds}초 정각!`);            
+      setIsSuccess(true) // 성공 구분
       triggerConfetti(); // 폭죽 터뜨리기!
     } else {
       console.log(`실패! 현재 초: ${seconds}.${centiseconds}`);
     }
 
-    if(stoppedTime >= 3000) {
+    if(stoppedTime >= 100) {      
       setIsGiveup(true)
     }
   }
   const handleReset = () => {
     setIsRunning(false);
     setTime(0);
+    setIsFinish(false)
+    setIsGiveup(false)
+    setIsSuccess(false)
   };
   
   const handleSuccess = () => triggerConfetti();
 
   const showConfetti = () => {
-    setIsSuccess(true);
+    setIsFinish(true)
     setIsGiveup(false)
   }
 
   return (
     <div className='no-select'>
       <h2>Timer</h2>      
-      <h3>정각 초(00)를 맞춰보세요!</h3><br/>      
+      <h3>정각 초(00)를 맞춰보세요!</h3><br/>
+      
       {isSuccess ? (
         <p className="congratulations-neon">축하합니다! 🎉</p>
       ) : (
         <p>1.00초 2.00초 3.00초...</p>
       )}
+      
       <div className='timerWrap'>
         <p>{formatTime(time)}초</p>
         <div className='btns'>
@@ -135,13 +141,13 @@ export default function Timer() {
           <button className='style2' onClick={handleReset}>
             Reset
           </button>
-          {isSuccess && (
+          {(isFinish || isSuccess) && (
             <button className='style3' onClick={handleSuccess}>
               🎇
             </button>
           )}
           {isGiveup && !isSuccess && (
-            <button className='style3' onClick={showConfetti}>
+            <button className='style3 ani' onClick={showConfetti}>
               give up?
             </button>
           )}
