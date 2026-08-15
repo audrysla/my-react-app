@@ -402,3 +402,31 @@ body{touch-action: none;}
   -ms-user-select: none;     /* IE / Edge 구버전 지원 */
   user-select: none;         /* 표준 속성 (텍스트 드래그 방지) */
 }
+
+.congratulations-neon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: serif;
+  height:25px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff007f,
+    0 0 20px #ff007f,
+    0 0 40px #ff007f,
+    0 0 80px #ff007f;
+  animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff007f, 0 0 40px #ff007f, 0 0 80px #ff007f, 0 0 120px #ff007f;
+  }
+}

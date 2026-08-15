@@ -117,8 +117,12 @@ export default function Timer() {
   return (
     <div className='no-select'>
       <h2>Timer</h2>      
-      <h3>정각 초(00)를 맞춰보세요!</h3><br/>
-      <p>1.00초 2.00초 3.00초...</p>
+      <h3>정각 초(00)를 맞춰보세요!</h3><br/>      
+      {isSuccess ? (
+        <p className="congratulations-neon">축하합니다! 🎉</p>
+      ) : (
+        <p>1.00초 2.00초 3.00초...</p>
+      )}
       <div className='timerWrap'>
         <p>{formatTime(time)}초</p>
         <div className='btns'>
@@ -143,7 +147,7 @@ export default function Timer() {
           )}
         </div>
       </div>
-      <br/>
+      <br/>      
       <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
     </div>
   );
