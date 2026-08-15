@@ -99,7 +99,7 @@ export default function Timer() {
       console.log(`실패! 현재 초: ${seconds}.${centiseconds}`);
     }
 
-    if(stoppedTime >= 100) {      
+    if(stoppedTime >= 2000) {      
       setIsGiveup(true)
     }
   }
