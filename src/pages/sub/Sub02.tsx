@@ -138,7 +138,7 @@ export default function Timer() {
           )}
           {isGiveup && !isSuccess && (
             <button className='style3' onClick={showConfetti}>
-              give up!
+              give up?
             </button>
           )}
         </div>
