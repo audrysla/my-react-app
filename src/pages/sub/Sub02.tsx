@@ -1,18 +1,31 @@
 import { useState, useRef, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
+// 1. 별 모양 Path 생성
+const star = confetti.shapeFromPath({
+  path: 'M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.399 8.165L12 18.896l-7.333 3.863 1.399-8.165-5.934-5.784 8.2-1.192zm0 0',
+});
+
 export default function Timer() {
   const [time, setTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [isGiveup, setIsGiveup] = useState<boolean>(false);
 
   const triggerConfetti = () => {
     // 중앙에서
     confetti({
       particleCount: 80,
       spread: 100,
-      shapes: ['star', 'circle'], // 'square'(기본), 'circle', 'star' 가능
+      shapes: [ 'square', 'circle'], // 'square'(기본), 'circle', 'star' 가능
+      colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
+    });
+    confetti({
+      particleCount: 80,
+      spread: 100,
+      shapes: [ star], // 'square'(기본), 'circle', 'star' 가능
+      scalar: 1.8,
       colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
     });
     // 왼쪽 구석에서
@@ -31,7 +44,7 @@ export default function Timer() {
     });
   }
 
-  useEffect(() => {    
+  useEffect(() => {
     
     if (isRunning) {
       // 1초마다 seconds 상태를 1씩 증가
@@ -84,6 +97,10 @@ export default function Timer() {
     } else {
       console.log(`실패! 현재 초: ${seconds}.${centiseconds}`);
     }
+
+    if(stoppedTime >= 3000) {
+      setIsGiveup(true)
+    }
   }
   const handleReset = () => {
     setIsRunning(false);
@@ -92,11 +109,16 @@ export default function Timer() {
   
   const handleSuccess = () => triggerConfetti();
 
+  const showConfetti = () => {
+    setIsSuccess(true);
+    setIsGiveup(false)
+  }
+
   return (
     <div className='no-select'>
       <h2>Timer</h2>      
-      <h3>초 정각(00)을 맞춰보세요!</h3><br/>
-      <p>1.00초 2.00초 3.00초...</p><br/>
+      <h3>정각 초(00)를 맞춰보세요!</h3><br/>
+      <p>1.00초 2.00초 3.00초...</p>
       <div className='timerWrap'>
         <p>{formatTime(time)}초</p>
         <div className='btns'>
@@ -113,10 +135,15 @@ export default function Timer() {
             <button className='style3' onClick={handleSuccess}>
               🎇
             </button>
-          )}     
+          )}
+          {isGiveup && !isSuccess && (
+            <button className='style3' onClick={showConfetti}>
+              give up!
+            </button>
+          )}
         </div>
       </div>
-      <br/><br/>
+      <br/>
       <p>useState, useRef, useEffect를 활용한 타이머 예제</p>
     </div>
   );
