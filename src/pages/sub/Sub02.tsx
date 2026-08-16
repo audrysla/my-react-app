@@ -41,19 +41,19 @@ export default function Timer() {
       colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
     });
     // 왼쪽 구석에서
-    // confetti({
-    //   particleCount: 30,
-    //   startVelocity: 30,
-    //   spread: 360,
-    //   origin: { x: Math.random() * 0.3, y: Math.random() - 0.2 },
-    // });
-    // // 오른쪽 구석에서
-    // confetti({
-    //   particleCount: 30,
-    //   startVelocity: 30,
-    //   spread: 360,
-    //   origin: { x: Math.random() * 0.7 + 0.3, y: Math.random() - 0.2 },
-    // });
+    confetti({
+      particleCount: 30,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x: Math.random() * 0.3, y: Math.random() - 0.2 },
+    });
+    // 오른쪽 구석에서
+    confetti({
+      particleCount: 30,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x: Math.random() * 0.7 + 0.3, y: Math.random() - 0.2 },
+    });
   }
 
   useEffect(() => {
