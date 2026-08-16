@@ -9,8 +9,8 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { path: "/", label: "React" },
-  { path: "/Sub03", label: "렌더링" },
   { path: "/Sub02", label: "Game" },
+  { path: "/Sub03", label: "렌더링" },
   { path: "/Sub04", label: "useRef" },
   { path: "/Sub05", label: "useState" },
   { path: "/Sub01", label: "useContext" },
