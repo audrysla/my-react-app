@@ -18,31 +18,42 @@ export default function Timer() {
     // 중앙에서
     confetti({
       particleCount: 80,
-      spread: 100,
-      shapes: [ 'square', 'circle'], // 'square'(기본), 'circle', 'star' 가능
+      spread: 130,
+      gravity:.5,
+      drift: -.5,
+      shapes: [ 'square'], // 'square'(기본), 'circle', 'star' 가능
+      colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
+    });
+    confetti({
+      particleCount: 80,
+      spread: 130,
+      gravity:.5,
+      drift: .5,
+      shapes: [ 'circle'], // 'square'(기본), 'circle', 'star' 가능
       colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
     });
     confetti({
       particleCount: 80,
       spread: 100,
+      gravity:.8,
       shapes: [ star], // 'square'(기본), 'circle', 'star' 가능
       scalar: 1.8,
       colors: ['#FFE100', '#FF007A', '#00E5FF'], // 색상도 직접 지정 가능!
     });
     // 왼쪽 구석에서
-    confetti({
-      particleCount: 30,
-      startVelocity: 30,
-      spread: 360,
-      origin: { x: Math.random() * 0.3, y: Math.random() - 0.2 },
-    });
-    // 오른쪽 구석에서
-    confetti({
-      particleCount: 30,
-      startVelocity: 30,
-      spread: 360,
-      origin: { x: Math.random() * 0.7 + 0.3, y: Math.random() - 0.2 },
-    });
+    // confetti({
+    //   particleCount: 30,
+    //   startVelocity: 30,
+    //   spread: 360,
+    //   origin: { x: Math.random() * 0.3, y: Math.random() - 0.2 },
+    // });
+    // // 오른쪽 구석에서
+    // confetti({
+    //   particleCount: 30,
+    //   startVelocity: 30,
+    //   spread: 360,
+    //   origin: { x: Math.random() * 0.7 + 0.3, y: Math.random() - 0.2 },
+    // });
   }
 
   useEffect(() => {
